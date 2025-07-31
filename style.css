@@ -1,0 +1,91 @@
+/* ********************************** CONFIG ******************************************* */
+/*
+*
+{
+    outline: 1px solid red;     Mousekeherramienta misteriosa
+}
+*/
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body              /*ocupa el alto total de la pantalla*/
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #783F8E;
+}
+
+main
+{
+    flex: 1;    /* el <main> se adapta automáticamente para rellenar lo que queda entre el header y el footer */    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ********************************** MAIN ******************************************* */
+
+#box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #FCFCFC;
+    width: 30%;
+    height: 50%;
+    border-radius: 2%;
+
+}
+
+
+/* ********************************** FOOTER ******************************************* */
+
+#footer
+{    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+    align-items: center;    
+    min-height: 55px;
+
+    background-color:  #1C7293;
+    color: #E8EEF2;
+    font-family: sans-serif;
+    font-size: 1.0rem;
+}
+
+a, #links
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+#links img
+{
+    width: 36px;
+    height: 36px;
+}
+
+
+/* ********************************** MEDIA QUERIES ******************************************* */
+
+@media (max-width: 768px)
+{    
+
+}
+
+@media (max-width: 480px)
+{
+    
+}
