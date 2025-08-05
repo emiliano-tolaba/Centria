@@ -2,7 +2,7 @@
 /*
 *
 {
-    outline: 1px solid red;     /*Mousekeherramienta misteriosa
+    outline: 1px solid red;     
 }*/
 
 
@@ -18,8 +18,8 @@ html, body              /*ocupa el alto total de la pantalla*/
 {
     height: 100%;
     display: flex;
-    flex-direction: column;
-    background-color: #783F8E;
+    flex-direction: column;    
+    background: linear-gradient(320deg, #8323c8, #6a23c8, #2f11b1);
 }
 
 main
@@ -30,6 +30,8 @@ main
     justify-content: center;
     align-items: center;
 }
+
+
 
 
 /* ********************************** MAIN ******************************************* */
@@ -43,26 +45,105 @@ main
     background-color: #FCFCFC;
     width: 30%;
     height: 60%;
-    border-radius: 2%;
-    padding: 1% 0%;
+    border-radius: 3%;
+    padding: 2% 3% 2% 3%;
 
     gap: 20px;
 
 }
 
-#task-input-container
+#input-container
 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    margin: 5%;
     gap: 5px;
 }   
 
-#inputToDo
+#input-to-do
 {
     width: 62%;
+    height: 130%;    
 }
+
+#btn-add
+{
+    width: 30px;
+    height: 130%;
+}
+
+#task-list
+{
+    flex: 1;
+    width: 90%;
+
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#list
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;    
+}
+
+.item
+{
+    display: flex;
+    flex-direction: row;    
+    align-items: end;
+    gap: 10px;
+    line-height: 1.5; /* ajusta según el tamaño del texto */
+    border-bottom: 1px solid #0000004d;
+    padding: 1.5% 0%;
+}
+
+#options
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    gap: 10px;
+}
+
+input[type="checkbox"]
+{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.378);
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked
+{
+    background-color: rgb(9, 206, 9);
+}
+
+input[type="checkbox"]:checked::after
+{
+    content: "✔";
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 
 
 /* ********************************** FOOTER ******************************************* */
@@ -75,7 +156,7 @@ main
     align-items: center;    
     min-height: 55px;
 
-    background-color:  #1C7293;
+    background-color:  #5c1ead;
     color: #E8EEF2;
     font-family: sans-serif;
     font-size: 1.0rem;
@@ -98,7 +179,7 @@ a, #links
 
 /* ********************************** MEDIA QUERIES ******************************************* */
 
-@media (max-width: 768px)
+@media (max-width: 1024px)
 {    
     #box
     {
@@ -113,5 +194,6 @@ a, #links
     {
         width: 85%;
         height: 80%;
+        padding-bottom: 5%;
     }
 }

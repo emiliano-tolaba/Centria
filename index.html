@@ -14,14 +14,23 @@
     <main>
         <div id="box">
             <h1>📝To-do List</h1>
-            <div id="task-input-container">
-                <input type="text" id="inputToDo" name="inputToDo" placeholder="What needs to be done?">
-                <button id="btnAdd">➕</button>
+            <div id="input-container">
+                <input type="text" id="input-to-do" name="inputToDo" placeholder="What needs to be done?">
+                <button id="btn-add">➕</button>
             </div>
-        </div>
-        
-    </main>
-    
+            <div id="task-list">
+                <ul id="list">
+                    <li><label class="item"><input type="checkbox"><span>estudiar programación</span></label></li>
+                    <li><label class="item"><input type="checkbox"><span>meditar 10 min</span></label></li>
+                    <li><label class="item"><input type="checkbox"><span>leer 5 hojas</span></label></li>
+                </ul>
+            </div>
+            <div id="options">
+                <button>Clear all</button>
+                <button>Remove checked</button>
+            </div>        
+        </div>        
+    </main>    
     <footer id="footer">
         <p>
             Copyright® All rigths reserved
