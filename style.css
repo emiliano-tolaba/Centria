@@ -41,12 +41,13 @@ main
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
     background-color: #FCFCFC;
     width: 30%;
-    height: 60%;
+    height: 65%;
     border-radius: 3%;
-    padding: 2% 3% 2% 3%;
+    padding: 1% 3% 2% 3%;
 
     gap: 20px;
 
@@ -59,7 +60,6 @@ main
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 5%;
     gap: 5px;
 }   
 
@@ -77,12 +77,11 @@ main
 
 #task-list
 {
-    flex: 1;
-    width: 90%;
-
+    flex-grow: 1;
+    width: 95%;
     max-height: 300px;
     overflow-y: auto;
-    padding-right: 10px;
+    padding-right: 10px;    /*para separar el scroll de la lista*/
 }
 
 #list
@@ -98,7 +97,7 @@ main
 {
     display: flex;
     flex-direction: row;    
-    align-items: end;
+    align-items: center;
     gap: 10px;
     line-height: 1.5; /* ajusta según el tamaño del texto */
     border-bottom: 1px solid #0000004d;
@@ -112,13 +111,15 @@ main
     justify-content: end;
     width: 100%;
     gap: 10px;
+
+    
 }
 
 input[type="checkbox"]
 {
     appearance: none;
     -webkit-appearance: none;
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     border: 2px solid rgba(0, 0, 0, 0.378);
     border-radius: 50%;

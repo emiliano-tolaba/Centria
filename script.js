@@ -38,7 +38,7 @@ buttons.add.addEventListener("click", ()=>
     if(inputToDo.value.trim() === '')
     {
         console.log("Debe rellenar el campo");
-        // aca va la animación de shake
+        applyAnimation(inputToDo, "shake");
     }    
     else
     {
@@ -47,3 +47,16 @@ buttons.add.addEventListener("click", ()=>
 
     inputToDo.value = "";
 });
+
+
+/**
+ * Applies a CSS animation by restarting it to ensure proper playback.
+ * @param {HTMLElement} element - The element to apply the animation to.
+ * @param {string} animationClass - The name of the animation class.
+ */
+function applyAnimation(element, animationClass)
+{
+    element.classList.remove(animationClass);
+    void element.offsetWidth; // Forces reflow to restart the animation
+    element.classList.add(animationClass);
+}
