@@ -12,15 +12,17 @@ class Item
         let input = document.createElement("input");
         let label = document.createElement("label");
         let li = document.createElement("li");
+        let btnDelete = document.createElement("button");
 
         span.textContent = newTask;
         input.setAttribute("type", "checkbox");
         label.classList.add("item");
-
+        btnDelete.textContent = "❌";
 
         label.appendChild(input);
         label.appendChild(span);
         li.appendChild(label);
+        li.appendChild(btnDelete);
 
         itemList.appendChild(li);
     }
@@ -29,6 +31,8 @@ class Item
 let buttons =
 {
     add: document.getElementById("btn-add"),
+    clear: document.getElementById("btn-clear-all"),
+    removeChecked: document.getElementById("btn-remove-checked"),
 }
 
 const inputToDo = document.getElementById("input-to-do");
