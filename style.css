@@ -75,13 +75,25 @@ main
     height: 130%;
 }
 
+.btn-icon
+{
+    background-color: transparent;
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.btn-icon:hover
+{
+    transform: scale(1.2);
+}
+
 #task-list
 {
     flex-grow: 1;
     width: 95%;
     max-height: 300px;
     overflow-y: auto;
-    padding-right: 10px;    /*para separar el scroll de la lista*/
+    padding-right: 10px;    /* para separar el scroll de la lista */
 }
 
 #list
@@ -102,6 +114,15 @@ main
     line-height: 1.5; /* ajusta según el tamaño del texto */
     border-bottom: 1px solid #0000004d;
     padding: 1.5% 0%;
+    width: 100%;
+}
+
+li
+{
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
 }
 
 #options

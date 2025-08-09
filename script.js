@@ -12,19 +12,36 @@ class Item
         let input = document.createElement("input");
         let label = document.createElement("label");
         let li = document.createElement("li");
+        let btnEdit = document.createElement("button");
         let btnDelete = document.createElement("button");
 
-        span.textContent = newTask;
         input.setAttribute("type", "checkbox");
-        label.classList.add("item");
+        
+        span.textContent = newTask;
+        btnEdit.textContent = "✏️";
         btnDelete.textContent = "❌";
+
+        btnEdit.classList.add("btn-icon");
+        btnDelete.classList.add("btn-icon");
+        label.classList.add("item");
 
         label.appendChild(input);
         label.appendChild(span);
         li.appendChild(label);
+        li.appendChild(btnEdit);
         li.appendChild(btnDelete);
-
         itemList.appendChild(li);
+
+        btnEdit.addEventListener("click", ()=>
+        {
+            // continuar aca
+        })
+        
+
+        btnDelete.addEventListener("click", () =>        // evento que elimina el item si se aprieta el boton
+        {
+            li.remove();
+        });
     }
 }
 
@@ -41,7 +58,6 @@ buttons.add.addEventListener("click", ()=>
 {
     if(inputToDo.value.trim() === '')
     {
-        console.log("Debe rellenar el campo");
         applyAnimation(inputToDo, "shake");
     }    
     else
