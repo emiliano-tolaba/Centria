@@ -36,6 +36,30 @@ main
 
 /* ********************************** MAIN ******************************************* */
 
+.sidebar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sidebar button
+{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 #box
 {
     display: flex;
@@ -168,57 +192,17 @@ input[type="checkbox"]:checked::after
 
 
 
-/* ********************************** FOOTER ******************************************* */
-
-#footer
-{    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;    
-    align-items: center;    
-    min-height: 55px;
-
-    background-color:  #5c1ead;
-    color: #E8EEF2;
-    font-family: sans-serif;
-    font-size: 1.0rem;
-}
-
-a, #links
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-}
-
-#links img
-{
-    width: 36px;
-    height: 36px;
-}
-
-
 /* ********************************** MEDIA QUERIES (Mobile first) ******************************************* */
 
 
-/* Tablet and up */
-@media (min-width: 480px)
+@media (max-width: 768px)
 {
-    #box
-    {
-        width: 100%;
-        height: 75%;
-        padding-bottom: 5%;
-    }
+    .sidebar { display: none; }
+    .bottom-nav { display: flex; }
 }
 
-/* Desktop and up */
-@media (min-width: 1024px)
-{    
-    #box
-    {
-        width: 60%;
-        height: 70%;
-    }
+@media (min-width: 769px)
+{
+    .sidebar { display: flex; }
+    .bottom-nav { display: none; }
 }
