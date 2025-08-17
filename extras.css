@@ -1,0 +1,10 @@
+*
+{
+    color: #3B3A4E;     /* Color de texto base */
+    color: #2E2E2E;     /* Color de Títulos, para más peso visual */
+    background-color: #1F2633;  /* color de fondo */
+    background-color: #1C1C1C;  /* color de la barra lateral*/
+    background-color: #F5F4EF;  /*color de fondo de la caja*/
+    border-bottom: 1px solid #ccc;  /*color de la barra divisioria de items*/
+
+}

@@ -6,7 +6,7 @@ class Item
     }
 
     createListItem(newTask)
-    {
+    {/*
         let itemList = document.getElementById("list");
         let span = document.createElement("span");
         let input = document.createElement("input");
@@ -42,16 +42,12 @@ class Item
         {
             li.remove();
         });
+        */
     }
 }
 
-let buttons =
-{
-    add: document.getElementById("btn-add"),
-    clear: document.getElementById("btn-clear-all"),
-    removeChecked: document.getElementById("btn-remove-checked"),
-}
 
+/*
 const inputToDo = document.getElementById("input-to-do");
 
 buttons.add.addEventListener("click", ()=>
@@ -67,6 +63,47 @@ buttons.add.addEventListener("click", ()=>
 
     inputToDo.value = "";
 });
+*/
+
+document.querySelectorAll('.menu-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const wrapper = trigger.closest('.menu-wrapper');
+    const menu = wrapper.querySelector('.menu');
+
+    // Cerrar otros menús
+    document.querySelectorAll('.menu').forEach(m => m.classList.add('hidden'));
+
+    // Mostrar este menú
+    menu.classList.remove('hidden');
+
+    // Limpiar clases previas
+    menu.classList.remove('horizontal', 'vertical');
+
+    // Verificamos si está dentro de una tarea
+    if (wrapper.closest('.task-item')) {
+      menu.classList.add('horizontal');
+    } else {
+      menu.classList.add('vertical');
+    }
+  });
+});
+
+document.addEventListener('click', (e) => {
+  const isTrigger = e.target.closest('.menu-trigger');
+  const isMenu = e.target.closest('.menu');
+
+  if (!isTrigger && !isMenu) {
+    document.querySelectorAll('.menu').forEach(menu => {
+      menu.classList.add('hidden');
+    });
+  }
+});
+
+
+
+
+
+
 
 
 /**

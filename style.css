@@ -6,23 +6,50 @@
 }*/
 
 
+
 *
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
+    
 }
 
-html, body              /*ocupa el alto total de la pantalla*/
+body              /*ocupa el alto total de la pantalla*/
 {
-    height: 100%;
+    min-height: 100vh;  
     display: flex;
     flex-direction: column;    
-    background: linear-gradient(320deg, #8323c8, #6a23c8, #2f11b1);
+    background-color: #1F2633;
 }
 
+body, button, input
+{
+    color: #3B3A4E;     /* Color de texto base */
+}
 
+h1, h2
+{
+    color: #2E2E2E;     /* Color de Títulos, para más peso visual */
+    font-size: 2.0rem;
+}
+
+/* El canal del scroll */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* El fondo del canal */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* El botón que se arrastra */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(60, 60, 60, 0.4);
+  border-radius: 4px;
+}
 
 /* ********************************** MAIN ******************************************* */
 
@@ -42,7 +69,7 @@ main
     flex-shrink: 0; /* evita que se reduzca */
     width: 60px;
     height: 100vh;
-    background-color: #1a1a1a;
+    background-color: #1C1C1C;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,39 +81,46 @@ main
 {
     background: none;
     border: none;
-    color: white;
+    color: #F5F4EF;
     font-size: 24px;
     cursor: pointer;
 }
 
 #toolbox
 {
-    flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
+}
+
+#tool-container
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F4EF;
+    width: 35%;
+    height: 65%;
+    max-width: 800px; 
+    max-height: 90vh;
+    border-radius: 3%;
+    transition: all 0.3s ease;
+    padding: 1%;
 }
 
 
 /* ********************************** TOOL-TODO ******************************************* */
-
 
 #tool-todo
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-
-    background-color: #fcfcfc;
-    width: 40%;
-    height: 65%; 
-    border-radius: 3%;
-    padding: 1% 3% 5% 3%;
-    gap: 30px;
-
+    justify-content: center;
+    padding: 2% 4%;
+    height: 100%;
+    gap: 40px;
 }
 
 #input-container
@@ -96,20 +130,20 @@ main
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 5px;
+    gap: 10px;
 }   
 
 #input-todo
 {
-    width: 62%;
-    height: 130%;    
+    width: 65%;
+    height: 30px;
 }
 
 #task-list
 {
     flex-grow: 1;
     width: 100%;
-    max-height: 300px;
+    max-height: 400px;
     overflow-y: auto;
     padding-right: 10px;    /* para separar el scroll de la lista */
 }
@@ -123,19 +157,7 @@ main
     list-style: none;    
 }
 
-.item
-{
-    display: flex;
-    flex-direction: row;    
-    align-items: center;
-    gap: 10px;
-    line-height: 1.5; /* ajusta según el tamaño del texto */
-    border-bottom: 1px solid #0000004d;
-    padding: 1.5% 0%;
-    width: 100%;
-}
-
-#tool-todo li
+.task-item
 {
     display: flex;
     flex-direction: row;
@@ -144,14 +166,18 @@ main
     gap: 5px;
 }
 
-#options
+.item
 {
     display: flex;
-    flex-direction: row;
-    justify-content: end;
-    width: 100%;
+    flex-direction: row;    
+    align-items: center;
     gap: 10px;
+    line-height: 1.5; /* ajusta según el tamaño del texto */
+    border-bottom: 1px solid #ccc;
+    padding: 1.5% 0%;
+    width: 100%;
 }
+
 
 input[type="checkbox"]
 {
@@ -182,7 +208,57 @@ input[type="checkbox"]:checked::after
     transform: translate(-50%, -50%);
 }
 
-/* ********************************** BTNS ******************************************* */
+/* ********************************** BUTTONS ******************************************* */
+
+.menu
+{
+    position: absolute;
+    background: #3B3A4E;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    
+}
+
+.menu-wrapper
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu button
+{
+    color: #F5F4EF;
+    font-size: 0.9rem;
+}
+
+.menu.vertical
+{
+    flex-direction: column;
+    top: calc(100% + 2px); /* lo ubica debajo del botón */
+    width: 160px;
+    left: 0; /* alineado al borde izquierdo del botón */
+    
+}
+
+.menu.horizontal
+{
+    flex-direction: row;
+    width: auto;
+    top: 35%;
+    right: calc(100% + 2px); /* lo ubica a la izquierda del botón */
+    transform: translateY(-50%);
+}
+
+.hidden
+{
+    display: none;
+}
 
 .btn-action
 {
@@ -190,51 +266,19 @@ input[type="checkbox"]:checked::after
     align-items: center;
     border: none;
     border-radius: 6px;
-    padding: 5px 5px;
-    font-size: 14px;
+    
+    font-size: 22px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
     gap: 6px;
+    background-color: transparent;
+    
 }
 .btn-action:hover
 {
     transform: scale(1.05);
 }
 
-
-.add
-{
-    background-color: #8ecae6;
-    color: white;
-}
-.add:hover
-{
-    background-color: #6aa9c2;
-}
-
-
-.edit
-{
-    background-color: #c1af93;
-    color: white;
-}
-.edit:hover
-{
-    background-color: #b0a087;
-}
-
-
-.delete
-{
-    background-color: #d66c6c;
-    color: white;
-    padding: 5px 6.5px;
-    font-size: 15px;
-}
-.delete:hover
-{
-    background-color: rgb(172, 87, 87)
-}
 
 
 
