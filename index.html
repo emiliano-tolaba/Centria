@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +14,12 @@
     <main>
         <aside class="sidebar">
             
-            <button type="button" class="btn-action"><i class="fa-solid fa-lightbulb" style="color: #FFD43B;"></i></button>
-            <button type="button" class="btn-action"><i class="fa-solid fa-book"></i></button>
-            <button type="button" class="btn-action"><i class="fa-solid fa-stopwatch"></i></button>
-            <button type="button" class="btn-action"><i class="fa-solid fa-clipboard-list"></i></button>
-            <button type="button" class="btn-action"><i class="fas fa-chart-line"></i></button>
-            <button type="button" class="btn-action"><i class="fa-solid fa-circle-question"></i></button>
+            <button type="button" class="btn-action"><i class="fa-solid fa-lightbulb icon-large" style="color: #FFD43B;"></i></button>
+            <button type="button" class="btn-action"><i class="fa-solid fa-book icon-large"></i></button>
+            <button type="button" class="btn-action"><i class="fa-solid fa-stopwatch icon-large"></i></button>
+            <button type="button" class="btn-action"><i class="fa-solid fa-clipboard-list icon-large"></i></button>
+            <button type="button" class="btn-action"><i class="fa-solid fa-chart-line icon-large"></i></button>
+            <button type="button" class="btn-action"><i class="fa-solid fa-circle-question icon-large"></i></button>
         </aside>
         <div id="toolbox">
             <div id="tool-container">
@@ -27,70 +27,58 @@
                     <h1>To-do List</h1>
                     <div id="input-container">
                         <input type="text" id="input-todo" name="inputToDo" placeholder="What needs to be done?">
-                        <button type="button" class="btn-action add"><i class="fa-solid fa-plus"></i></button>
+                        <button type="button" class="btn-action"><i class="fa-solid fa-plus icon-medium"></i></button>
                         
                         <div class="menu-wrapper">
-                        <button class="menu-trigger btn-action"><i class="fa-solid fa-list"></i></button>
-                        <div class="menu hidden">
-                            <button type="button" class="btn-action"><i class="fa-solid fa-broom"></i><span>Clear all tasks</span></button>
-                            <button type="button" class="btn-action"><i class="fa-solid fa-trash-can fa-lg"></i><span>Remove checked</span></button>
-                        </div>
-                    </div>  
+                            <button class="menu-trigger btn-action"><i class="fa-solid fa-list icon-medium"></i></button>
+                            <div class="menu hidden">
+                                <button type="button" class="btn-action"><i class="fa-solid fa-broom icon-small"></i><span>Clear all tasks</span></button>
+                                <button type="button" class="btn-action"><i class="fa-solid fa-trash-can icon-small"></i><span>Remove checked</span></button>
+                            </div>
+                        </div>  
                     </div>
                     <div id="task-list">
                         <ul id="list">
                             <li class="task-item">
                                 <label class="item">
-                                    <input type="checkbox">
+                                    <button type="button" class="btn-action"><i class="fa-regular fa-circle icon-small"></i></button>
                                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sunt veniam inventore sequi illo, fugit iure ullam architecto omnis numquam, nam illum cupiditate minus, nemo quae voluptate magnam harum similique!</span>
                                 </label>
                                 <div class="menu-wrapper">
-                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical icon-medium"></i></button>
                                     <div class="menu hidden">
-                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></button>
-                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark fa-lg"></i><span>Delete</span></button>
-                                    </div>
-                                </div>
-                            </li>     
-                            <li class="task-item">
-                                <label class="item">
-                                    <input type="checkbox">
-                                    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa eos corrupti nisi commodi magni saepe adipisci hic porro tempore quasi consectetur est possimus cum quis blanditiis rem reiciendis, voluptatibus modi?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem illum omnis eaque laborum vero autem voluptatibus sunt fuga, nulla consequuntur veniam quibusdam praesentium odit ipsam, adipisci voluptate cumque atque. Repellat.</span>
-                                </label>
-                                <div class="menu-wrapper">
-                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                    <div class="menu hidden">
-                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></button>
-                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark fa-lg"></i><span>Delete</span></button>
-                                    </div>
-                                </div>
-                            </li>       
-                            <li class="task-item">
-                                <label class="item">
-                                    <input type="checkbox">
-                                    <span>Limpiar clases innecesarias en el CSS</span>
-                                </label>
-                                <div class="menu-wrapper">
-                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                    <div class="menu hidden">
-                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></button>
-                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark fa-lg"></i><span>Delete</span></button>
+                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square icon-small"></i><span>Edit</span></button>
+                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark icon-small"></i><span>Delete</span></button>
                                     </div>
                                 </div>
                             </li>
                             <li class="task-item">
                                 <label class="item">
-                                    <input type="checkbox">
-                                    <span>Hacer commit y push</span>
+                                    <button type="button" class="btn-action"><i class="fa-regular fa-circle icon-small"></i></button>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sunt veniam inventore sequi illo, fugit iure ullam architecto omnis numquam, nam illum cupiditate minus, nemo quae voluptate magnam harum similique!</span>
                                 </label>
                                 <div class="menu-wrapper">
-                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical icon-medium"></i></button>
                                     <div class="menu hidden">
-                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square"></i><span>Edit</span></button>
-                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark fa-lg"></i><span>Delete</span></button>
+                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square icon-small"></i><span>Edit</span></button>
+                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark icon-small"></i><span>Delete</span></button>
                                     </div>
                                 </div>
-                            </li>                            
+                            </li>
+                            <li class="task-item">
+                                <label class="item">
+                                    <button type="button" class="btn-action checkbox-toggle"><i class="fa-regular fa-circle icon-small"></i></button>
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sunt veniam inventore sequi illo, fugit iure ullam architecto omnis numquam, nam illum cupiditate minus, nemo quae voluptate magnam harum similique!</span>
+                                </label>
+                                <div class="menu-wrapper">
+                                    <button class="menu-trigger btn-action"><i class="fa-solid fa-ellipsis-vertical icon-medium"></i></button>
+                                    <div class="menu hidden">
+                                        <button type="button" class="btn-action edit"><i class="fa-solid fa-pen-to-square icon-small"></i><span>Edit</span></button>
+                                        <button type="button" class="btn-action delete"><i class="fa-solid fa-xmark icon-small"></i><span>Delete</span></button>
+                                    </div>
+                                </div>
+                            </li>                                
+                            
                         </ul>
                     </div>                          
                 </section>                

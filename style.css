@@ -82,7 +82,6 @@ main
     background: none;
     border: none;
     color: #F5F4EF;
-    font-size: 30px;
     cursor: pointer;
 }
 
@@ -106,7 +105,7 @@ main
     max-height: 90vh;
     border-radius: 3%;
     transition: all 0.3s ease;
-    padding: 1%;
+    padding: 1.5%;
 }
 
 
@@ -179,34 +178,22 @@ main
 }
 
 
-input[type="checkbox"]
+/*revisar esto*/
+.checkbox-toggle
 {
-    appearance: none;
-    -webkit-appearance: none;
-    min-width: 20px;
-    height: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.378);
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
+    color: #555;
+    transition: color 0.2s ease;
 }
 
-input[type="checkbox"]:checked
-{
-    background-color: rgb(9, 206, 9);
+.checkbox-toggle.checked i {
+  color: #4CAF50; /* verde para tareas completadas */
 }
 
-input[type="checkbox"]:checked::after
-{
-    content: "✔";
-    color: white;
-    font-size: 14px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.checkbox-toggle.unchecked i {
+  color: #ccc; /* gris para tareas pendientes */
 }
+
+
 
 /* ********************************** BUTTONS ******************************************* */
 
@@ -234,7 +221,6 @@ input[type="checkbox"]:checked::after
 .menu button
 {
     color: #F5F4EF;
-    font-size: 0.9rem;
 }
 
 .menu.vertical
@@ -263,24 +249,47 @@ input[type="checkbox"]:checked::after
 .btn-action
 {
     display: flex;
+    flex-direction: row;
     align-items: center;
     border: none;
     border-radius: 6px;
-    
-    font-size: 22px;
     cursor: pointer;
-    transition: transform 0.2s ease;
     gap: 6px;
     background-color: transparent;
-    
+    transition: transform 0.2s ease;
+
 }
+
 .btn-action:hover
 {
     transform: scale(1.05);
 }
 
+/* ********************************** ICONS ******************************************* */
 
+.icon-small
+{
+    font-size: 16px !important;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+}
 
+.icon-medium
+{
+    font-size: 22px !important;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.icon-large
+{
+    font-size: 30px !important;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+}
 
 /* ********************************** MEDIA QUERIES (Desktop first) ******************************************* */
 
