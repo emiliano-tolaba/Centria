@@ -65,8 +65,10 @@ buttons.add.addEventListener("click", ()=>
 });
 */
 
-document.querySelectorAll('.menu-trigger').forEach(trigger => {
-  trigger.addEventListener('click', () => {
+document.querySelectorAll('.menu-trigger').forEach(trigger =>
+{
+    trigger.addEventListener('click', () =>
+    {
     const wrapper = trigger.closest('.menu-wrapper');
     const menu = wrapper.querySelector('.menu');
 
@@ -85,7 +87,7 @@ document.querySelectorAll('.menu-trigger').forEach(trigger => {
     } else {
       menu.classList.add('vertical');
     }
-  });
+    });
 });
 
 document.addEventListener('click', (e) => {
@@ -99,9 +101,29 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// alternar icono boton
+// alternar icono boton, revisar
 
+document.querySelectorAll('.checkbox-toggle').forEach(button =>
+{  
+	button.addEventListener('click', ()=>
+	{
+    button.classList.toggle('checked');
+    button.classList.toggle('unchecked');
 
+    const icon = button.querySelector('i');
+    
+    if(button.classList.contains('checked'))
+    {
+		icon.classList.remove('fa-circle');
+		icon.classList.add('fa-circle-check');
+    }
+    else
+    {
+		icon.classList.remove('fa-circle-check');
+		icon.classList.add('fa-circle');
+    }
+	});
+});
 
 
 /**

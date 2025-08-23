@@ -265,6 +265,26 @@ main
     transform: scale(1.05);
 }
 
+.checkbox-toggle
+{
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.checkbox-toggle.checked i
+{
+  color: #4CAF50; /* verde para tareas completadas */
+}
+
+.checkbox-toggle.unchecked i
+{
+  color: #b1b0b0; /* gris para tareas pendientes */
+}
+
+
+
 /* ********************************** ICONS ******************************************* */
 
 .icon-small
