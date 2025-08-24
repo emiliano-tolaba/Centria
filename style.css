@@ -35,20 +35,25 @@ h1, h2
     font-size: 2.0rem;
 }
 
+/* ********************************** SCROLLBAR ******************************************* */
+
 /* El canal del scroll */
-::-webkit-scrollbar {
-  width: 6px;
+::-webkit-scrollbar
+{
+    width: 6px;
 }
 
 /* El fondo del canal */
-::-webkit-scrollbar-track {
-  background: transparent;
+::-webkit-scrollbar-track
+{
+    background: transparent;
 }
 
 /* El botón que se arrastra */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(60, 60, 60, 0.4);
-  border-radius: 4px;
+::-webkit-scrollbar-thumb
+{
+    background-color: rgba(60, 60, 60, 0.4);
+    border-radius: 4px;
 }
 
 /* ********************************** MAIN ******************************************* */
@@ -83,6 +88,15 @@ main
     border: none;
     color: #F5F4EF;
     cursor: pointer;
+}
+
+#brand
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #F5F4EF;
 }
 
 #toolbox
@@ -257,7 +271,6 @@ main
     gap: 6px;
     background-color: transparent;
     transition: transform 0.2s ease;
-
 }
 
 .btn-action:hover
