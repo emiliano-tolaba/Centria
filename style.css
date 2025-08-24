@@ -5,7 +5,20 @@
     outline: 1px solid red;     
 }*/
 
+:root
+{
+    --color-bg-body: #1F2633;
+    --color-bg-menu: #3B3A4E;
+    --color-bg-sidebar: #1C1C1C;   
+    --color-ui-primary: #F5F4EF;
+    --color-text-body: #3B3A4E;
+    --color-text-title: #2E2E2E; 
+}
 
+.light-mode
+{
+    /*acá va el modo claro*/
+}
 
 *
 {
