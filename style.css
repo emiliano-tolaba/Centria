@@ -8,16 +8,19 @@
 :root
 {
     --color-bg-body: #1F2633;
-    --color-bg-menu: #3B3A4E;
     --color-bg-sidebar: #1C1C1C;   
+    --color-bg-menu: #3B3A4E;
     --color-ui-primary: #F5F4EF;
     --color-text-body: #3B3A4E;
-    --color-text-title: #2E2E2E; 
+    --color-text-title: #2E2E2E;
+    --color-state-completed: #4CAF50;
+    --color-muted: #b1b0b0;
+    --color-shadow: rgba(0,0,0,0.1);
 }
 
 .light-mode
 {
-    /*acá va el modo claro*/
+    background-color: none; /*borrar esto despues*/
 }
 
 *
@@ -26,7 +29,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
-    
 }
 
 body              /*ocupa el alto total de la pantalla*/
@@ -34,19 +36,34 @@ body              /*ocupa el alto total de la pantalla*/
     min-height: 100vh;  
     display: flex;
     flex-direction: column;    
-    background-color: #1F2633;
+    background-color: var(--color-bg-body);
 }
 
 body, button, input
 {
-    color: #3B3A4E;     /* Color de texto base */
+    color: var(--color-text-body);
 }
 
 h1, h2
 {
-    color: #2E2E2E;     /* Color de Títulos, para más peso visual */
+    color: var(--color-text-title);
     font-size: 2.0rem;
 }
+
+ul
+{
+    list-style: none;
+}
+
+main
+{
+    flex: 1;    /* el <main> se adapta automáticamente para rellenar lo que queda entre el header y el footer */    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* ********************************** SCROLLBAR ******************************************* */
 
@@ -69,48 +86,78 @@ h1, h2
     border-radius: 4px;
 }
 
-/* ********************************** MAIN ******************************************* */
 
+/* ********************************** ASIDE ******************************************* */
 
-main
-{
-    flex: 1;    /* el <main> se adapta automáticamente para rellenar lo que queda entre el header y el footer */    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.sidebar
+#sidebar
 {
     position: sticky;
     flex-shrink: 0; /* evita que se reduzca */
-    width: 60px;
+    width: 180px;
     height: 100vh;
-    background-color: #1C1C1C;
+    background-color: var(--color-bg-sidebar);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
+
+    box-shadow: 1px 0px 10px var(--color-shadow);
+    transition: width 0.5 ease;
 }
 
-.sidebar button
+#sidebar-collapse-btn
 {
-    background: none;
-    border: none;
-    color: #F5F4EF;
-    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    top: 3.5%;
+    right: -0.87rem;
+    border-radius: 50%;
+    background-color: var(--color-bg-sidebar);
+    box-shadow: 2px 2px 5px var(--color-shadow);
+    transition: right 0.3s ease;
+}
+
+#sidebar-collapse-btn i
+{
+    color: var(--color-muted);
+}
+
+#sidebar ul
+{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 80%;
 }
 
 #brand
 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #F5F4EF;
+    width: 90%;
+    overflow: hidden;
 }
+
+#brand button
+{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#brand img
+{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+/* ********************************** TOOLBOX ******************************************* */
 
 #toolbox
 {
@@ -125,7 +172,7 @@ main
 {
     display: flex;
     flex-direction: column;
-    background-color: #F5F4EF;
+    background-color: var(--color-ui-primary);
     width: 35%;
     height: 65%;
     max-width: 800px; 
@@ -180,7 +227,6 @@ main
     display: flex;
     flex-direction: column;
     gap: 5px;
-    list-style: none;    
 }
 
 .task-item
@@ -199,36 +245,61 @@ main
     align-items: center;
     gap: 10px;
     line-height: 1.5; /* ajusta según el tamaño del texto */
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--color-muted);
     padding: 1.5% 0%;
     width: 100%;
 }
 
-
-/*revisar esto*/
 .checkbox-toggle
 {
     color: #555;
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: color 0.2s ease;
 }
 
-.checkbox-toggle.checked i {
-  color: #4CAF50; /* verde para tareas completadas */
+.checkbox-toggle.checked i
+{
+    color: var(--color-state-completed);
 }
 
-.checkbox-toggle.unchecked i {
-  color: #ccc; /* gris para tareas pendientes */
+.checkbox-toggle.unchecked i
+{
+    color: var(--color-muted);
 }
-
 
 
 /* ********************************** BUTTONS ******************************************* */
+
+.btn-sidebar
+{
+    background: none;
+    border: none;
+    color: var(--color-ui-primary);
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 3%;
+
+    
+}
+
+.btn-sidebar:hover
+{
+    background-color: var(--color-text-title);
+}
 
 .menu
 {
     position: absolute;
     background: #3B3A4E;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px var(--color-shadow);
     border-radius: 8px;
     padding: 8px;
     z-index: 10;
@@ -247,7 +318,7 @@ main
 
 .menu button
 {
-    color: #F5F4EF;
+    color: var(--color-ui-primary);
 }
 
 .menu.vertical
@@ -291,23 +362,7 @@ main
     transform: scale(1.05);
 }
 
-.checkbox-toggle
-{
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
 
-.checkbox-toggle.checked i
-{
-  color: #4CAF50; /* verde para tareas completadas */
-}
-
-.checkbox-toggle.unchecked i
-{
-  color: #b1b0b0; /* gris para tareas pendientes */
-}
 
 
 
@@ -337,17 +392,15 @@ main
     line-height: 36px;
 }
 
+
 /* ********************************** MEDIA QUERIES (Desktop first) ******************************************* */
 
 
 @media (max-width: 768px)
 {
-    .sidebar { display: none; }
-    .bottom-nav { display: flex; }
+
 }
 
 @media (min-width: 769px)
 {
-    .sidebar { display: flex; }
-    .bottom-nav { display: none; }
 }
