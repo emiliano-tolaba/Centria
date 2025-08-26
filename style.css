@@ -7,31 +7,39 @@
 
 :root
 {
-    --color-bg-body: #1F2633;
-    --color-bg-sidebar: #1C1C1C;
+    --color-bg-body: #0f1115;
+    --color-bg-menu: #393838;
     
-    --color-bg-menu: #1C1C1C;
-    --color-ui-primary: #F5F4EF;
-    --color-ui-secondary: #242222;
-    --color-text-body: #e6e4dc;
-    --color-text-title: #F5F4EF;
+    --color-ui-primary: #1a1d23;
+
+    --color-text-primary: #d0cfcd;
+    --color-text-accent: #F5F4EF;
+
+    --color-btn: #F5F4EF;
 
     --color-state-completed: #4CAF50;
-    --color-muted: #b1b0b0;
+    --color-muted: #736f6f;
+    --color-hover: #3a3d45;
     --color-shadow: rgba(0,0,0,0.1);
 }
 
 .light-mode
 {
-    --color-bg-body: #1F2633;
-    --color-bg-sidebar: #1C1C1C;   
-    --color-bg-menu: #3B3A4E;
-    --color-ui-primary: #F5F4EF;
-    --color-text-body: #3B3A4E;
-    --color-text-title: #2E2E2E;
-    --color-state-completed: #4CAF50;
-    --color-muted: #b1b0b0;
-    --color-shadow: rgba(0,0,0,0.1);
+    --color-bg-body: #f9f9f6;           /* fondo general: humo suave */
+    --color-bg-menu: #eae9e4;           /* menú: piedra clara */
+
+    --color-ui-primary: #ffffff;        /* UI principal: blanco ritual */
+
+    --color-text-primary: #1a1d23;      /* texto principal: grafito suave */
+    --color-text-accent: #393838;      /* texto destacado: piedra lunar */
+
+    --color-btn: #1a1d23;               /* botón: oscuro sobre fondo claro */
+
+    --color-state-completed: #388e3c;   /* verde raíz */
+    --color-muted: #a8a8a4;             /* gris ritual claro */
+    --color-hover: #dcdad4;             /* hover: niebla cálida */
+    --color-shadow: rgba(0, 0, 0, 0.05); /* sombra más suave */
+    
 }
 
 *
@@ -50,14 +58,19 @@ body              /*ocupa el alto total de la pantalla*/
     background-color: var(--color-bg-body);
 }
 
-body, button, input
+body, input
 {
-    color: var(--color-text-body);
+    color: var(--color-text-primary);
+}
+
+button
+{
+    color: var(--color-btn);
 }
 
 h1, h2
 {
-    color: var(--color-text-title);
+    color: var(--color-text-accent);
     font-size: 2.0rem;
 }
 
@@ -111,7 +124,7 @@ main
     flex-shrink: 0; /* evita que se reduzca */
     width: 180px;
     height: 100vh;
-    background-color: var(--color-bg-sidebar);
+    background-color: var(--color-ui-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,11 +142,10 @@ main
     justify-content: center;
     align-items: center;
     
-    
     top: 3.5%;
     right: -0.87rem;
     border-radius: 50%;
-    background-color: var(--color-bg-sidebar);
+    background-color: var(--color-ui-primary);
     box-shadow: 2px 2px 5px var(--color-shadow);
     transition: right 0.3s ease;
 }
@@ -153,13 +165,13 @@ main
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 80%;
+    width: 90%;
 }
 
 
 #brand
 {
-    width: 100%;
+    width: 95%;
     overflow: hidden;
 }
 
@@ -167,7 +179,7 @@ main
 {
     font-weight: 700;
     font-size: 1.4rem;
-    color: var(--color-ui-primary);
+    color: var(--color-text-accent);
 }
 
 #brand img
@@ -193,7 +205,7 @@ main
 {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-ui-secondary);
+    background-color: var(--color-ui-primary);
     width: 35%;
     height: 65%;
     max-width: 800px; 
@@ -212,7 +224,7 @@ main
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2% 4%;
+    padding: 2% 1%;
     height: 100%;
     gap: 40px;
 }
@@ -230,7 +242,12 @@ main
 #input-todo
 {
     width: 65%;
-    height: 30px;
+    height: 35px;
+    background-color: var(--color-ui-primary);
+    border-radius: 5px;
+    border: 1px solid var(--color-muted);
+    font-size: 1.0rem;
+    padding: 5px;
 }
 
 #task-list
@@ -273,7 +290,6 @@ main
 
 .checkbox-toggle
 {
-    color: #555;
     background: none;
     border: none;
     cursor: pointer;
@@ -306,7 +322,6 @@ main
 
 .btn-sidebar
 {
-    color: var(--color-ui-primary);
     gap: 10px;
     width: 100%;
     padding: 3%;
@@ -314,7 +329,7 @@ main
 
 .btn-sidebar:hover
 {
-    background-color: var(--color-muted);
+    background-color: var(--color-hover);
 }
 
 .btn-action
@@ -347,11 +362,6 @@ main
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-.menu button
-{
-    color: var(--color-ui-primary);
 }
 
 .menu.vertical
