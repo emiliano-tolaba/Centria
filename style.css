@@ -8,6 +8,22 @@
 :root
 {
     --color-bg-body: #1F2633;
+    --color-bg-sidebar: #1C1C1C;
+    
+    --color-bg-menu: #1C1C1C;
+    --color-ui-primary: #F5F4EF;
+    --color-ui-secondary: #242222;
+    --color-text-body: #e6e4dc;
+    --color-text-title: #F5F4EF;
+
+    --color-state-completed: #4CAF50;
+    --color-muted: #b1b0b0;
+    --color-shadow: rgba(0,0,0,0.1);
+}
+
+.light-mode
+{
+    --color-bg-body: #1F2633;
     --color-bg-sidebar: #1C1C1C;   
     --color-bg-menu: #3B3A4E;
     --color-ui-primary: #F5F4EF;
@@ -16,11 +32,6 @@
     --color-state-completed: #4CAF50;
     --color-muted: #b1b0b0;
     --color-shadow: rgba(0,0,0,0.1);
-}
-
-.light-mode
-{
-    background-color: none; /*borrar esto despues*/
 }
 
 *
@@ -53,6 +64,11 @@ h1, h2
 ul
 {
     list-style: none;
+}
+
+i
+{
+    line-height: 1.2 !important;    /*alinea verticalmente los iconos al medio*/
 }
 
 main
@@ -99,8 +115,8 @@ main
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    padding-top: 2%;
+    gap: 50px;
 
     box-shadow: 1px 0px 10px var(--color-shadow);
     transition: width 0.5 ease;
@@ -127,6 +143,11 @@ main
     color: var(--color-muted);
 }
 
+#sidebar-collapse-btn button
+{
+    border-radius: 50%;
+}
+
 #sidebar ul
 {
     display: flex;
@@ -135,16 +156,18 @@ main
     width: 80%;
 }
 
+
 #brand
 {
-    width: 90%;
+    width: 100%;
     overflow: hidden;
 }
 
 #brand button
 {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color: var(--color-ui-primary);
 }
 
 #brand img
@@ -152,8 +175,6 @@ main
     width: 50px;
     height: 50px;
 }
-
-
 
 
 
@@ -172,7 +193,7 @@ main
 {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-ui-primary);
+    background-color: var(--color-ui-secondary);
     width: 35%;
     height: 65%;
     max-width: 800px; 
@@ -272,33 +293,45 @@ main
 
 /* ********************************** BUTTONS ******************************************* */
 
-.btn-sidebar
+.btn-sidebar, .btn-action, #brand button
 {
-    background: none;
-    border: none;
-    color: var(--color-ui-primary);
-    cursor: pointer;
-    border-radius: 6px;
-    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
+    border: none;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-sidebar
+{
+    color: var(--color-ui-primary);
     gap: 10px;
     width: 100%;
     padding: 3%;
-
-    
 }
 
 .btn-sidebar:hover
 {
-    background-color: var(--color-text-title);
+    background-color: var(--color-muted);
+}
+
+.btn-action
+{
+    transition: transform 0.2s ease;
+    gap: 6px;
+}
+
+.btn-action:hover
+{
+    transform: scale(1.05);
 }
 
 .menu
 {
     position: absolute;
-    background: #3B3A4E;
+    background: var(--color-bg-menu);
     box-shadow: 0 4px 8px var(--color-shadow);
     border-radius: 8px;
     padding: 8px;
@@ -344,26 +377,6 @@ main
     display: none;
 }
 
-.btn-action
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    gap: 6px;
-    background-color: transparent;
-    transition: transform 0.2s ease;
-}
-
-.btn-action:hover
-{
-    transform: scale(1.05);
-}
-
-
-
 
 
 /* ********************************** ICONS ******************************************* */
@@ -373,7 +386,6 @@ main
     font-size: 16px !important;
     width: 18px;
     height: 18px;
-    line-height: 16px;
 }
 
 .icon-medium
@@ -381,7 +393,6 @@ main
     font-size: 22px !important;
     width: 24px;
     height: 24px;
-    line-height: 24px;
 }
 
 .icon-large
@@ -389,7 +400,6 @@ main
     font-size: 30px !important;
     width: 36px;
     height: 36px;
-    line-height: 36px;
 }
 
 
