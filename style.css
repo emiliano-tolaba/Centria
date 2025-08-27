@@ -54,7 +54,7 @@ body              /*ocupa el alto total de la pantalla*/
 {
     min-height: 100vh;  
     display: flex;
-    flex-direction: column;    
+    flex-direction: row;    
     background-color: var(--color-bg-body);
 }
 
