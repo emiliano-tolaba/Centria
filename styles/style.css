@@ -1,115 +1,16 @@
-/* ********************************** CONFIG ******************************************* */
-/*
-*
-{
-    outline: 1px solid red;     
-}*/
-
-:root
-{
-    --color-bg-body: #0f1115;
-    --color-bg-menu: #393838;
-    
-    --color-ui-primary: #1a1d23;
-
-    --color-text-primary: #d0cfcd;
-    --color-text-accent: #F5F4EF;
-
-    --color-btn: #F5F4EF;
-
-    --color-state-completed: #4CAF50;
-    --color-muted: #736f6f;
-    --color-hover: #3a3d45;
-    --color-shadow: rgba(0,0,0,0.1);
-}
-
-.light-mode
-{
-    --color-bg-body: #f9f9f6;           /* fondo general: humo suave */
-    --color-bg-menu: #eae9e4;           /* menú: piedra clara */
-
-    --color-ui-primary: #ffffff;        /* UI principal: blanco ritual */
-
-    --color-text-primary: #1a1d23;      /* texto principal: grafito suave */
-    --color-text-accent: #393838;      /* texto destacado: piedra lunar */
-
-    --color-btn: #1a1d23;               /* botón: oscuro sobre fondo claro */
-
-    --color-state-completed: #388e3c;   /* verde raíz */
-    --color-muted: #a8a8a4;             /* gris ritual claro */
-    --color-hover: #dcdad4;             /* hover: niebla cálida */
-    --color-shadow: rgba(0, 0, 0, 0.05); /* sombra más suave */
-    
-}
-
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-}
-
-body              /*ocupa el alto total de la pantalla*/
-{
-    min-height: 100vh;  
-    display: flex;
-    flex-direction: row;    
-    background-color: var(--color-bg-body);
-}
-
-body, input
-{
-    color: var(--color-text-primary);
-}
-
-button
-{
-    color: var(--color-btn);
-}
-
-h1, h2
-{
-    color: var(--color-text-accent);
-    font-size: 2.0rem;
-}
-
-ul
-{
-    list-style: none;
-}
-
-i
-{
-    line-height: 1.2 !important;    /*alinea verticalmente los iconos al medio*/
-}
-
-main
-{
-    flex: 1;    /* el <main> se adapta automáticamente para rellenar lo que queda entre el header y el footer */    
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-
 /* ********************************** SCROLLBAR ******************************************* */
 
-/* El canal del scroll */
-::-webkit-scrollbar
+::-webkit-scrollbar                     /* El canal del scroll */
 {
     width: 6px;
 }
 
-/* El fondo del canal */
-::-webkit-scrollbar-track
+::-webkit-scrollbar-track               /* El fondo del canal */
 {
     background: transparent;
 }
 
-/* El botón que se arrastra */
-::-webkit-scrollbar-thumb
+::-webkit-scrollbar-thumb               /* El botón que se arrastra */
 {
     background-color: rgba(60, 60, 60, 0.4);
     border-radius: 4px;
@@ -122,17 +23,22 @@ main
 {
     position: sticky;
     flex-shrink: 0; /* evita que se reduzca */
-    width: 180px;
+    width: 200px;
     height: 100vh;
     background-color: var(--color-ui-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding-top: 2%;
     gap: 50px;
-
     box-shadow: 1px 0px 10px var(--color-shadow);
-    transition: width 0.5 ease;
+    transition: width 0.5s ease;
+}
+
+#sidebar header, #sidebar nav, #sidebar footer
+{
+    width: 90%;
 }
 
 #sidebar-collapse-btn
@@ -165,13 +71,10 @@ main
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 90%;
 }
-
 
 #brand
 {
-    width: 95%;
     overflow: hidden;
 }
 
@@ -211,7 +114,6 @@ main
     max-width: 800px; 
     max-height: 90vh;
     border-radius: 3%;
-    transition: all 0.3s ease;
     padding: 1.5%;
 }
 
@@ -224,7 +126,7 @@ main
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2% 1%;
+    padding: 2% 0%;
     height: 100%;
     gap: 40px;
 }

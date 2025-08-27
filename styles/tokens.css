@@ -1,0 +1,46 @@
+:root
+{
+    /* Backgrounds */
+    --color-bg-body: #0f1115;
+    --color-bg-menu: #393838;
+    --color-ui-primary: #1a1d23;
+
+    /*Text */
+    --color-text-primary: #d0cfcd;
+    --color-text-accent: #F5F4EF;
+
+    /* Buttons */
+    --color-btn: #F5F4EF;
+
+    /* States */
+    --color-state-completed: #4CAF50;
+    --color-muted: #736f6f;
+
+    /* Effects */
+    --color-hover: #3a3d45;
+    --color-shadow: rgba(0,0,0,0.1);
+}
+
+.light-mode
+{
+    /* Backgrounds */
+    --color-bg-body: #f9f9f6;          
+    --color-bg-menu: #eae9e4;         
+    --color-ui-primary: #ffffff;      
+
+    /*Text */
+    --color-text-primary: #1a1d23;    
+    --color-text-accent: #393838;     
+
+    /* Buttons */
+    --color-btn: #1a1d23;             
+
+    /* States */
+    --color-state-completed: #388e3c; 
+    --color-muted: #a8a8a4;    
+    
+    /* Effects */
+    --color-hover: #dcdad4;           
+    --color-shadow: rgba(0, 0, 0, 0.05);
+    
+}

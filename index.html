@@ -4,27 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/config.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
     <title>Centria</title>
 </head>
 <body>
     <aside id="sidebar">
-        <div id="sidebar-collapse-btn">
-            <button type="button" class="btn-sidebar"><i class="fa-solid fa-angle-left icon-medium"></i></button>
-        </div>
-        <div id="brand">
-            <button type="button" class="btn-sidebar"><img src="./assets/Centria-light.png" alt="centria"><span>Centria</span></button>                
-        </div>
-        <ul>                
-            <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-book icon-large"></i><span>Resources</span></button></li>
-            <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-stopwatch icon-large"></i><span>Pomodoro</span></button></li>
-            <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-clipboard-list icon-large"></i><span>To-do List</span></button></li>
-            <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-chart-line icon-large"></i><span>Habit Tracker</span></button></li>
-            <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-circle-question icon-large"></i><span>Help</span></button></li>
-        </ul>            
+        <header>
+            <div id="sidebar-collapse-btn">
+                <button type="button" class="btn-sidebar"><i class="fa-solid fa-angle-left icon-medium"></i></button>
+            </div>
+            <div id="brand">
+                <button type="button" class="btn-sidebar"><img src="./assets/Centria-light.png" alt="centria"><span>Centria</span></button>                
+            </div>
+        </header>
+        <nav>
+            <ul>                
+                <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-book icon-large"></i><span>Resources</span></button></li>
+                <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-stopwatch icon-large"></i><span>Pomodoro</span></button></li>
+                <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-clipboard-list icon-large"></i><span>To-do List</span></button></li>
+                <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-chart-line icon-large"></i><span>Habit Tracker</span></button></li>
+                <li><button type="button" class="btn-sidebar"><i class="fa-solid fa-circle-question icon-large"></i><span>Help</span></button></li>
+            </ul>            
+        </nav>
+        <footer>
+            
+        </footer>
     </aside>
     <main>
         <div id="toolbox">
