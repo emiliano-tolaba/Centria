@@ -19,6 +19,14 @@
     /* Effects */
     --color-hover: #3a3d45;
     --color-shadow: rgba(0,0,0,0.1);
+
+
+    /* Icons size */
+    --icon-size-sm: 18px;
+    --icon-size-md: 24px;
+    --icon-size-lg: 36px;
+    --icon-size-xl: 40px;
+    
 }
 
 .light-mode
