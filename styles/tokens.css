@@ -26,6 +26,13 @@
     --icon-size-md: 24px;
     --icon-size-lg: 36px;
     --icon-size-xl: 40px;
+
+    /* Font size */
+    --font-size-sm: 0.9rem;
+    --font-size-md: 1.0rem;
+    --font-size-lg: 1.4rem;
+    --font-size-xl: 2.0rem;
+
     
 }
 
